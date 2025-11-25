@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>С Днём рождения!</title>
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #ffe6f2, #ffd6ea, #ffeef7);
+  text-align:center;
+}
+h1 {
+  margin-top:40px;
+  font-size:36px;
+  animation: fadeIn 2s ease;
+}
+.gallery img{
+  width:80%;
+  max-width:350px;
+  border-radius:20px;
+  margin:20px 0;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  animation: pop 1s ease;
+}
+.button {
+  display:inline-block;
+  margin:30px 0;
+  padding:15px 25px;
+  font-size:20px;
+  text-decoration:none;
+  border-radius:15px;
+  background:white;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+  cursor:pointer;
+}
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+@keyframes pop { 0%{transform:scale(0.7);} 100%{transform:scale(1);} }
+@keyframes pulse {
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+ 100%{transform:scale(1);}
+}
+.heart {
+  position:fixed;
+  top:-10px;
+  color:red;
+  font-size:20px;
+  animation: fall 4s linear infinite;
+}
+@keyframes fall {
+  0%{transform:translateY(-10px);}
+  100%{transform:translateY(110vh);}
+}
+</style>
+</head>
+<body>
+
+<h1>С днём рождения, зая! Люблю тебя ❤️</h1>
+
+<div class="gallery">
+  <img src="58C2EDA8-F0EE-49A9-9305-56B82C90DA2A.jpeg">
+  <img src="9DA4E084-0457-407C-BB15-BBCC5529709E.jpeg">
+  <p style="font-size:20px;">Будь самым счастливым!</p>
+  <img src="DD0A718F-12C0-40D2-A217-413BC0E0B0C9.jpeg">
+</div>
+
+<div class="button" onclick="showMessage()">Твой подарок ждёт тебя 🎁</div>
+
+<script>
+function showMessage() {
+  alert("Проверь баланс своей банковской карты 😘");
+}
+
+for(let i=0;i<15;i++){
+  let h=document.createElement('div');
+  h.className='heart';
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDelay=(Math.random()*5)+'s';
+  h.innerHTML='❤️';
+  document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
